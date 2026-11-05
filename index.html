@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mingda Liu</title>
+<meta name="description" content="Mingda Liu works on data-centric post-training: ultra-long-horizon environment construction and black-box distillation. MComp in AI, National University of Singapore.">
+<meta name="theme-color" content="#C9CAC6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#24262A" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://sasyatitech.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mingda Liu">
+<meta property="og:description" content="Data-centric post-training: ultra-long-horizon environments and black-box distillation.">
+<meta property="og:url" content="https://sasyatitech.github.io/">
+<meta property="og:image" content="https://sasyatitech.github.io/assets/img/portrait.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Archivo:wdth,wght@62..125,500..900&family=Noto+Serif+SC:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>
+  /* Pick the language before first paint: saved choice, else browser language. */
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem("ml-lang"); } catch (e) {}
+    if (l !== "en" && l !== "zh") l = /^zh/i.test(navigator.language || "") ? "zh" : "en";
+    document.documentElement.setAttribute("data-lang", l);
+    document.documentElement.setAttribute("lang", l === "zh" ? "zh-CN" : "en");
+  })();
+</script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main"><span class="en">Skip to content</span><span class="zh">跳到正文</span></a>
+
+<header class="bar" id="top">
+  <a class="brand" href="./">Mingda Liu</a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#work"><span class="en">Work</span><span class="zh">论文</span></a>
+    <a href="#projects"><span class="en">Projects</span><span class="zh">项目</span></a>
+    <a href="#path"><span class="en">Path</span><span class="zh">经历</span></a>
+    <a href="#contact"><span class="en">Contact</span><span class="zh">联系</span></a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-set-lang="zh" aria-pressed="false">中文</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- =====================================================
+       LOOK 00 · Hero
+       A plaster wall under one hard light. The light drifts
+       slowly with the cursor (static on touch / reduced motion).
+       Portrait: drop a 4:5 image at assets/img/portrait.jpg.
+       ===================================================== -->
+  <section class="hero" data-light data-lx="58" data-ly="24" data-edge="21" aria-labelledby="name">
+    <!-- rising damp: a soft stain from the floor with an uneven tide line -->
+    <svg class="damp" viewBox="0 0 1000 240" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="damp-fill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="currentColor" stop-opacity=".075"/>
+          <stop offset=".35" stop-color="currentColor" stop-opacity=".035"/>
+          <stop offset="1" stop-color="currentColor" stop-opacity=".05"/>
+        </linearGradient>
+        <filter id="tide-a" x="-5%" y="-40%" width="110%" height="180%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.0035 0.018" numOctaves="3" seed="7"/>
+          <feDisplacementMap in="SourceGraphic" scale="30" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <filter id="tide-b" x="-5%" y="-40%" width="110%" height="180%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.005 0.025" numOctaves="2" seed="31"/>
+          <feDisplacementMap in="SourceGraphic" scale="24" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+      </defs>
+      <g filter="url(#tide-b)">
+        <path d="M-40 104 H1040" stroke="currentColor" stroke-width="1.2" fill="none" opacity=".07"/>
+      </g>
+      <g filter="url(#tide-a)">
+        <rect x="-40" y="140" width="1080" height="140" fill="url(#damp-fill)"/>
+        <path d="M-40 140 H1040" stroke="currentColor" stroke-width="1.6" fill="none" opacity=".1"/>
+      </g>
+    </svg>
+
+    <div class="hero-meta">
+      <p class="season">A/W 2026 <span class="dash">—</span> Tokyo <span aria-hidden="true">→</span> Singapore</p>
+      <p class="field"><span class="en">Data-centric post-training · Long-horizon environments · Black-box distillation</span><span class="zh">数据视角的后训练 · 超长程环境 · 黑盒蒸馏</span></p>
+    </div>
+
+    <div class="hero-lede">
+      <p class="en">My research is data-centric LLM post-training: building ultra-long-horizon environments for agent training, and black-box distillation via training-data reconstruction.</p>
+      <p class="zh">我从数据的角度研究大模型后训练：构建可供智能体训练的超长程环境；通过重建训练数据实现黑盒蒸馏。</p>
+      <dl class="status">
+        <div>
+          <dt><span class="en">Now</span><span class="zh">现在</span></dt>
+          <dd><span class="en">MComp in AI, National University of Singapore</span><span class="zh">新加坡国立大学，人工智能方向计算机硕士</span></dd>
+        </div>
+        <div>
+          <dt><span class="en">Before</span><span class="zh">此前</span></dt>
+          <dd><span class="en">Researcher, Fujisawa Lab, Institute of Science Tokyo. B.S. valedictorian, rank 1/51.</span><span class="zh">东京科学大学 Fujisawa 实验室研究员；本科毕业生代表，专业排名 1/51。</span></dd>
+        </div>
+      </dl>
+    </div>
+
+    <figure class="portrait portrait--colour">
+      <!-- assets/img/portrait.jpg is already finished (muted colour film look, made with
+           tools/film_portrait.py), so "portrait--colour" switches off the CSS B&W filter.
+           For an untouched photo, remove that class and the page will make it B&W. -->
+      <img src="assets/img/portrait.jpg" alt="Portrait of Mingda Liu" onerror="this.remove()">
+      <div class="portrait-empty" aria-hidden="true">
+        <span class="crop tl"></span><span class="crop tr"></span><span class="crop bl"></span><span class="crop br"></span>
+        <span class="slot">Portrait</span>
+        <span class="slot-spec">4 : 5 · B&amp;W · one hard light</span>
+      </div>
+      <figcaption>Look 00</figcaption>
+    </figure>
+
+    <h1 class="hero-name" id="name"><span>Mingda</span> <span>Liu</span></h1>
+  </section>
+
+
+  <div class="wrap">
+
+    <!-- =====================================================
+         01 · Work
+         One <article class="look"> per paper. Pick a cloth:
+         cloth-black, cloth-stone, cloth-blue, cloth-violet, cloth-oxide.
+         ===================================================== -->
+    <section class="sec" id="work" aria-labelledby="work-h">
+      <header class="sec-head">
+        <span class="sec-no">01</span>
+        <h2 id="work-h"><span class="en">Work</span><span class="zh">论文</span></h2>
+        <p class="sec-note"><span class="en">4 looks · 2 accepted · 2 under review</span><span class="zh">4 篇 · 已接收 2 · 审稿中 2</span></p>
+      </header>
+
+      <div class="looks">
+
+        <article class="look cloth-black" id="norm-anchors">
+          <div class="look-top"><span>Look 01 / 04</span><span>NeurIPS 2026</span></div>
+          <h3 class="look-name">Norm Anchors</h3>
+          <p class="look-title">Norm Anchors Make Model Edits Last</p>
+          <p class="look-authors"><b>Mingda Liu*</b>, Zhenghan Zhu*, Ze'an Miao*, Katsuki Fujisawa</p>
+          <p class="look-sum en">A lightweight method that extends how many edits a model can sustain by more than 4× at negligible cost, making long-term model maintenance more reliable.</p>
+          <p class="look-sum zh">稳定了 LLM 知识的反复更新，开销可忽略，将可用编辑范围延长 4 倍以上，使模型维护更可靠，无需完整重训。</p>
+          <div class="look-foot">
+            <span class="tag">
+              <span><span class="en">LLM post-training / Lifelong learning</span><span class="zh">LLM 后训练 / 终身学习</span></span>
+              <span><span class="en">Care: do not overwrite</span><span class="zh">洗涤说明：请勿覆盖</span></span>
+            </span>
+            <a class="look-link" href="https://openreview.net/forum?id=QbwOoMKB05" target="_blank" rel="noopener">OpenReview ↗</a>
+          </div>
+        </article>
+
+        <article class="look cloth-stone" id="cmollm">
+          <div class="look-top"><span>Look 02 / 04</span><span>ICML 2026</span></div>
+          <h3 class="look-name">cMoLLM</h3>
+          <p class="look-title">cMoLLM at Scale: Horizontal Scaling Laws for Convolutionally-Gated Mixture-of-LLMs</p>
+          <p class="look-authors">Xin Yang, Yemin Wang, <b>Mingda Liu</b>, Letian Li, Shuaishuai Cao, Zhengxiao He, Ryan Dong</p>
+          <p class="look-sum en">Scales model capacity through dynamically routed end-to-end model streams, improving quality under matched compute without a proportional increase in computation.</p>
+          <p class="look-sum zh">提出流水线级的混合架构，在同等算力下提升 LLM 质量，旨在获得比单纯扩大稠密模型更优的容量–算力权衡。</p>
+          <div class="look-foot">
+            <span class="tag"><span><span class="en">LLM architecture / Efficient scaling</span><span class="zh">LLM 架构 / 高效扩展</span></span></span>
+            <a class="look-link" href="https://openreview.net/forum?id=sfjLeIbTAi" target="_blank" rel="noopener">OpenReview ↗</a>
+          </div>
+        </article>
+
+        <article class="look cloth-blue" id="fork-of-thought">
+          <div class="look-top"><span>Look 03 / 04</span><span><span class="en">ICLR 2027 · under review</span><span class="zh">ICLR 2027 · 审稿中</span></span></div>
+          <h3 class="look-name">Fork of Thought</h3>
+          <p class="look-title">Fork of Thought: Eliciting Self-Triggered Rethinking in LLM Agents via Branch-Sampled Reinforcement Learning</p>
+          <p class="look-authors">Junjie Meng*, Wei Wu*, <b>Mingda Liu*</b>, Wen-Jie Shu, Xiaoru Liu, Jiqcheng Lu, Jun Liu, Hui Xiong</p>
+          <p class="look-sum en">Trains long-horizon agents to call for fresh-context verification when they need it and to recover from earlier mistakes in flight, without a separate, stronger critic.</p>
+          <p class="look-sum zh">训练长程智能体选择性地调用全新上下文验证，并在执行过程中从早期错误中恢复，无需依赖独立的更强评审模型，即可实现更可靠的多步自动化。</p>
+          <div class="look-foot">
+            <span class="tag"><span><span class="en">Agentic RL / Self-evolution</span><span class="zh">Agentic RL / 自进化</span></span></span>
+          </div>
+        </article>
+
+        <article class="look cloth-violet" id="bridge">
+          <div class="look-top"><span>Look 04 / 04</span><span><span class="en">ICLR 2027 · under review</span><span class="zh">ICLR 2027 · 审稿中</span></span></div>
+          <h3 class="look-name">BRIDGE</h3>
+          <p class="look-title">BRIDGE: Bilevel Retrieval Credit-Aware Agentic Reinforcement Learning</p>
+          <p class="look-authors">Quan Xiao*, <b>Mingda Liu*</b>, Gaowen Liu, Katsuki Fujisawa, Tianyi Chen</p>
+          <p class="look-sum en">Closes the information-credit gap between search agents and retrievers, improving knowledge-intensive reasoning and beating a joint-training baseline in roughly half the training time.</p>
+          <p class="look-sum zh">弥合了搜索智能体与检索器之间的信息–信用鸿沟，提升知识密集型推理能力，并以约一半的训练时间超越联合训练基线。</p>
+          <div class="look-foot">
+            <span class="tag"><span><span class="en">Agentic RL / Retrieval</span><span class="zh">Agentic RL / 检索</span></span></span>
+          </div>
+        </article>
+
+      </div>
+      <p class="footnote"><span class="en">* Equal contribution.</span><span class="zh">* 共同贡献。</span></p>
+    </section>
+
+
+    <!-- =====================================================
+         02 · Projects
+         Each project carries a "print" drawn from its own numbers:
+           data-print="rain"    data-count, data-strips, data-seed
+           data-print="threads" data-total, data-pulled, data-seed
+         ===================================================== -->
+    <section class="sec" id="projects" aria-labelledby="projects-h">
+      <header class="sec-head">
+        <span class="sec-no">02</span>
+        <h2 id="projects-h"><span class="en">Projects</span><span class="zh">项目</span></h2>
+        <p class="sec-note"><span class="en">Prints drawn from the data</span><span class="zh">印花由数据生成</span></p>
+      </header>
+
+      <article class="proj" id="recast">
+        <div class="proj-text">
+          <p class="kicker"><span class="en">Coding agents · Data synthesis · RL environments</span><span class="zh">代码智能体 · 数据合成 · RL 环境</span></p>
+          <h3 class="proj-name">RECAST</h3>
+          <p class="proj-sub">Modularizing Real-World Repositories into Composable Training Environments for Coding Agents</p>
+          <p class="en">Turns existing code repositories into reusable training assets. Each repository is decomposed into dependency-aware modules and recombined into controllable start and goal states, so one codebase yields many verifiable tasks instead of a single issue/patch pair. Deletion-only synthesis keeps real source code as the ground truth; sandboxed execution, replayable provenance and mutation probes harden rewards against weak tests and reward hacking.</p>
+          <p class="zh">把现有代码仓库变成可复用的训练资产。仓库被递归分解为具备依赖关系感知的功能模块，再重组为可控的起点与目标状态，于是一个代码库能生成大量可验证任务，而不只是一组 issue/patch。仅删除式合成保留真实源代码作为标准答案；沙箱执行、可重放溯源和变异探针让 RL 奖励更能抵抗弱测试与奖励投机。</p>
+          <dl class="spec">
+            <div><dt><span class="en">Yield</span><span class="zh">产出</span></dt><dd><span class="en">1 repository → 7 modules → 257 verified tasks</span><span class="zh">1 个仓库 → 7 个模块 → 257 个已验证任务</span></dd></div>
+          </dl>
+        </div>
+        <figure class="print-fig">
+          <div class="print" data-print="rain" data-count="257" data-strips="7" data-seed="257" role="img"
+               aria-label="Seven fabric strips stitched together, marked with 257 rain stains."></div>
+          <figcaption><span class="en">Print · 257 rain marks, one per verified task, falling across 7 strips, one per module peeled from a single repository.</span><span class="zh">印花 · 257 个雨痕，每个对应一个已验证任务；落在 7 条拼接布上，每条对应从同一仓库剥离出的一个模块。</span></figcaption>
+        </figure>
+      </article>
+
+      <article class="proj proj--flip" id="toolbranch">
+        <div class="proj-text">
+          <p class="kicker"><span class="en">LLM/VLM post-training · Agentic RL · Tool use</span><span class="zh">LLM/VLM 后训练 · Agentic RL · 工具使用</span></p>
+          <h3 class="proj-name">ToolBranch</h3>
+          <p class="proj-sub">Efficient Adaptive Tool Use for LLM/VLM Agents</p>
+          <p class="en">On-policy RL that teaches LLM/VLM agents when to answer directly and when to reach for a tool. Scaffolded Branch-GRPO generates paired tool and no-tool branches for every sample, so both choices keep a comparative reward signal and training avoids the exploration collapse of vanilla GRPO.</p>
+          <p class="zh">一种 on-policy 强化学习方法，让 LLM/VLM 智能体学会何时直接作答、何时调用工具。Scaffolded Branch-GRPO 为每个样本生成成对的“调用工具”与“不调用工具”分支，两种选择都保有可比较的奖励信号，避免原始 GRPO 的探索坍塌。</p>
+          <dl class="spec">
+            <div><dt><span class="en">vs. GRPO</span><span class="zh">对比 GRPO</span></dt><dd><span class="en">+8.87 pp accuracy · −40.73% tool calls · −29.42% tokens</span><span class="zh">准确率 +8.87 pp · 工具调用 −40.73% · token −29.42%</span></dd></div>
+            <div><dt><span class="en">Stack</span><span class="zh">技术栈</span></dt><dd>verl / VerlTool · vLLM · Ray · Qwen3-VL</dd></div>
+            <div><dt><span class="en">Bench</span><span class="zh">评测</span></dt><dd>When2Tool · V* · MathVista · MMBench · MME · MMSI-Bench · SPAR-Bench</dd></div>
+          </dl>
+        </div>
+        <figure class="print-fig">
+          <div class="print print--pinstripe" data-print="threads" data-total="100" data-pulled="41" data-seed="4073"
+               data-labels="GRPO · 100|ToolBranch · 59" role="img"
+               aria-label="Pinstripe cloth with 100 threads at the top; lower down, 41 threads have been pulled out and only needle holes remain."></div>
+          <figcaption><span class="en">Print · 100 pinstripes, one per tool call under vanilla GRPO (top). Partway down, ToolBranch pulls 41 of them (−40.73%); below that only needle holes remain.</span><span class="zh">印花 · 上半部分 100 条细条纹，每条对应原始 GRPO 的一次工具调用。往下，ToolBranch 抽掉了其中 41 条（−40.73%），只留下针孔。</span></figcaption>
+        </figure>
+      </article>
+    </section>
+
+
+    <!-- =====================================================
+         03 · Path
+         ===================================================== -->
+    <section class="sec" id="path" aria-labelledby="path-h">
+      <header class="sec-head">
+        <span class="sec-no">03</span>
+        <h2 id="path-h"><span class="en">Path</span><span class="zh">经历</span></h2>
+        <p class="sec-note">35.68° N <span aria-hidden="true">→</span> 1.30° N</p>
+      </header>
+
+      <div class="path">
+        <ol class="ledger">
+          <li class="now">
+            <span class="when">2026.08 — 2027.12</span>
+            <span class="where"><span class="en">National University of Singapore</span><span class="zh">新加坡国立大学</span></span>
+            <span class="what"><span class="en">Master of Computing in Artificial Intelligence (expected Dec 2027).</span><span class="zh">人工智能方向计算机硕士（预计 2027 年 12 月毕业）。</span></span>
+          </li>
+          <li>
+            <span class="when">2026.04 — 2026.07</span>
+            <span class="where"><span class="en">Fujisawa Lab, Institute of Science Tokyo</span><span class="zh">东京科学大学 Fujisawa 实验室</span></span>
+            <span class="what"><span class="en">Researcher, full-time. LLM/VLM post-training and agentic RL.</span><span class="zh">全职研究员。LLM/VLM 后训练与 Agentic RL。</span></span>
+          </li>
+          <li>
+            <span class="when">2022.04 — 2026.03</span>
+            <span class="where"><span class="en">Institute of Science Tokyo</span><span class="zh">东京科学大学</span></span>
+            <span class="what"><span class="en">B.S. in Mathematical and Computing Science. GPA 94.59/100, rank 1/51, valedictorian. Formerly Tokyo Institute of Technology.</span><span class="zh">数理与计算科学，理学学士。GPA 94.59/100，专业排名 1/51，毕业生代表。原东京工业大学。</span></span>
+          </li>
+        </ol>
+
+        <aside class="notes" aria-label="Honors and other">
+          <h3 class="notes-h"><span class="en">Honors</span><span class="zh">荣誉</span></h3>
+          <ul>
+            <li><span><span class="en">Undergraduate Valedictorian, Institute of Science Tokyo</span><span class="zh">东京科学大学本科毕业生代表</span></span><span class="y">2026</span></li>
+            <li><span><span class="en">Outstanding International Undergraduate Scholarship, Best Award</span><span class="zh">优秀国际本科生奖学金（最高奖）</span></span><span class="y">2022–26</span></li>
+            <li><span><span class="en">Fuji Seal Foundation Scholarship</span><span class="zh">Fuji Seal 财团奖学金</span></span><span class="y">2024</span></li>
+            <li><span><span class="en">Monbukagakusho Honors Scholarship (JASSO)</span><span class="zh">文部科学省私费留学生学习奖励费（JASSO）</span></span><span class="y">2022</span></li>
+          </ul>
+          <h3 class="notes-h"><span class="en">Also</span><span class="zh">其他</span></h3>
+          <ul>
+            <li><span><span class="en">Teaching assistant and instructor, 100+ students in programming, mathematics and physics</span><span class="zh">助教 / 讲师，编程、数学、物理课程，学生 100+ 人</span></span><span class="y">2022–26</span></li>
+            <li><span><span class="en">AtCoder, top 6% globally</span><span class="zh">AtCoder 全球前 6%</span> · <a href="https://atcoder.jp/users/DaNaoDai" target="_blank" rel="noopener">DaNaoDai ↗</a></span><span class="y"></span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         04 · Contact
+         ===================================================== -->
+    <section class="sec contact" id="contact" aria-labelledby="contact-h">
+      <header class="sec-head">
+        <span class="sec-no">04</span>
+        <h2 id="contact-h"><span class="en">Contact</span><span class="zh">联系</span></h2>
+        <p class="sec-note"><span class="en">Singapore · GMT+8</span><span class="zh">新加坡 · GMT+8</span></p>
+      </header>
+      <p class="mail-row">
+        <a class="mail" href="mailto:mingda.liu@u.nus.edu">mingda.liu@u.nus.edu</a>
+        <button type="button" class="copy" data-copy="mingda.liu@u.nus.edu"><span class="en">Copy</span><span class="zh">复制</span></button>
+      </p>
+      <ul class="elsewhere">
+        <li><a href="https://scholar.google.com/citations?user=IGo6kvwAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar ↗</a></li>
+        <li><a href="https://github.com/SasyaTitech" target="_blank" rel="noopener">GitHub · SasyaTitech ↗</a></li>
+        <!-- <li><a href="assets/cv/Mingda_Liu_CV.pdf">CV (PDF)</a></li> -->
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <span>© 2026 Mingda Liu</span>
+  <span><span class="en">Edition A/W 2026 · updated 2026.11</span><span class="zh">A/W 2026 版 · 更新于 2026.11</span></span>
+  <span class="colophon">Archivo · Anonymous Pro · Noto Serif SC</span>
+</footer>
+</body>
+</html>
