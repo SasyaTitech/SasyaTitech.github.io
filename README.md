@@ -53,6 +53,8 @@ python -m http.server 4173
 
 **加一个新页面**（比如 `/notes/`）：新建 `notes/index.html`，复用 `/assets/css/site.css` 和 `/assets/js/site.js`，结构参考 `404.html`，最简单。
 
+**改了 CSS 或 JS 之后**：把 `index.html` 和 `404.html` 里 `site.css?v=…`、`site.js?v=…` 的版本号改一下，比如改成当天日期。GitHub Pages 会让浏览器把静态文件缓存 10 分钟，不改版本号的话，老访客可能看到新页面配旧样式。
+
 ## 部署
 
 仓库名必须是 `SasyaTitech.github.io`。推到 `main` 分支后，在仓库的 Settings → Pages 里选 “Deploy from a branch”，分支选 `main`，目录选 `/ (root)`。
