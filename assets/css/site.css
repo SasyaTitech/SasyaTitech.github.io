@@ -18,31 +18,32 @@
 :root {
   color-scheme: light;
 
-  /* wall */
-  --wall:        #C9CAC6;   /* dirty-white lime plaster */
-  --wall-plane:  #BFC0BC;   /* second plane of the wall, turned from the light */
-  --plate:       #B4B5B1;   /* empty photo slot */
-  --lit:         rgb(255 255 255 / .26);
+  /* wall: a lighter, cleaner lime plaster so text sits crisply on it */
+  --wall:        #D3D4D0;
+  --wall-plane:  #C9CAC6;   /* second plane of the wall, turned from the light */
+  --plate:       #BDBEBA;   /* empty photo slot */
+  --lit:         rgb(255 255 255 / .22);
   --shade:       17 18 21;  /* rgb triplet for shadows */
   --stain:       #26282C;
 
   /* ink */
-  --ink:   #26282C;         /* softened black, never #000 */
-  --ink-2: #44464A;
-  --rule:  rgb(38 40 44 / .22);
+  --ink:   #1F2124;         /* softened black, never #000 */
+  --ink-2: #393B3F;
+  --rule:  rgb(31 33 36 / .22);
 
-  /* cloth */
+  /* cloth: lighter washes, so ink on them stays above ~8:1 */
   --cloth-black:  #26282C;
-  --on-black:     #C9CAC6;
-  --cloth-stone:  #ADAFAC;
-  --cloth-blue:   #A5AEB5;  /* grey-blue, washed */
-  --cloth-violet: #ABA5AF;  /* dusty violet, washed */
-  --cloth-oxide:  #ABAA9B;  /* oxidised copper, washed */
+  --on-black:     #D6D7D3;
+  --cloth-stone:  #BEC0BD;
+  --cloth-blue:   #B5BDC3;  /* grey-blue, washed */
+  --cloth-violet: #BBB5BE;  /* dusty violet, washed */
+  --cloth-oxide:  #BCBBAD;  /* oxidised copper, washed */
 
-  /* textures: wall = cloudy trowel marks; cloth = vertical dye streaks */
-  --tex-wall: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='720'%3E%3Cfilter id='m' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0045 .006' numOctaves='4' seed='23' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .15 0 0 0 0 .157 0 0 0 0 .173 .4 0 0 0 -.175'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");
-  --tex-cloth: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55 .011' numOctaves='2' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .15 0 0 0 0 .157 0 0 0 0 .173 .44 0 0 0 -.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
-  --tex-cloth-alt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55 .011' numOctaves='2' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .79 0 0 0 0 .79 0 0 0 0 .78 .34 0 0 0 -.155'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
+  /* textures: wall = cloudy trowel marks; cloth = vertical dye streaks.
+     Kept faint: they should read as material, never sit "in" the text. */
+  --tex-wall: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='720'%3E%3Cfilter id='m' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0045 .006' numOctaves='4' seed='23' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .15 0 0 0 0 .157 0 0 0 0 .173 .18 0 0 0 -.08'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");
+  --tex-cloth: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55 .011' numOctaves='2' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .15 0 0 0 0 .157 0 0 0 0 .173 .26 0 0 0 -.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
+  --tex-cloth-alt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55 .011' numOctaves='2' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .79 0 0 0 0 .79 0 0 0 0 .78 .2 0 0 0 -.09'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
 
   /* stitches: 5px thread, 4px gap, drawn in currentColor */
   --stitch-x: repeating-linear-gradient(90deg, currentColor 0 5px, transparent 5px 9px);
@@ -52,6 +53,8 @@
   --f-display: "Archivo", "Arial Narrow", "Helvetica Neue", sans-serif;
   --f-mono: "Anonymous Pro", "Noto Serif SC", ui-monospace, Menlo, Consolas, monospace;
   --f-zh: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  /* reading text: Noto Serif SC carries its own Latin, so English and Chinese prose match */
+  --f-text: "Noto Serif SC", "Source Serif 4", Georgia, "Songti SC", "SimSun", serif;
 
   /* layout */
   --pad-x: max(clamp(16px, 4.4vw, 64px), env(safe-area-inset-left, 0px));
@@ -64,24 +67,24 @@
     color-scheme: dark;
     --wall: #24262A; --wall-plane: #202225; --plate: #2F3135;
     --lit: rgb(255 255 255 / .07); --shade: 6 7 9; --stain: #000;
-    --ink: #CBCCC8; --ink-2: #A3A5A3; --rule: rgb(203 204 200 / .18);
+    --ink: #D7D8D4; --ink-2: #AFB1AF; --rule: rgb(215 216 212 / .18);
     --cloth-black: #C9CAC6; --on-black: #26282C;
     --cloth-stone: #333539; --cloth-blue: #323A41; --cloth-violet: #38343D; --cloth-oxide: #36362E;
     --tex-wall: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='720'%3E%3Cfilter id='m' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0045 .006' numOctaves='4' seed='23' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .79 0 0 0 0 .79 0 0 0 0 .78 .17 0 0 0 -.075'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");
-    --tex-cloth: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55 .011' numOctaves='2' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .79 0 0 0 0 .79 0 0 0 0 .78 .3 0 0 0 -.135'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
-    --tex-cloth-alt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55 .011' numOctaves='2' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .15 0 0 0 0 .157 0 0 0 0 .173 .44 0 0 0 -.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
+    --tex-cloth: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55 .011' numOctaves='2' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .79 0 0 0 0 .79 0 0 0 0 .78 .18 0 0 0 -.08'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
+    --tex-cloth-alt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55 .011' numOctaves='2' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .15 0 0 0 0 .157 0 0 0 0 .173 .26 0 0 0 -.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
   --wall: #24262A; --wall-plane: #202225; --plate: #2F3135;
   --lit: rgb(255 255 255 / .07); --shade: 6 7 9; --stain: #000;
-  --ink: #CBCCC8; --ink-2: #A3A5A3; --rule: rgb(203 204 200 / .18);
+  --ink: #D7D8D4; --ink-2: #AFB1AF; --rule: rgb(215 216 212 / .18);
   --cloth-black: #C9CAC6; --on-black: #26282C;
   --cloth-stone: #333539; --cloth-blue: #323A41; --cloth-violet: #38343D; --cloth-oxide: #36362E;
   --tex-wall: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='720'%3E%3Cfilter id='m' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0045 .006' numOctaves='4' seed='23' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .79 0 0 0 0 .79 0 0 0 0 .78 .17 0 0 0 -.075'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");
-  --tex-cloth: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55 .011' numOctaves='2' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .79 0 0 0 0 .79 0 0 0 0 .78 .3 0 0 0 -.135'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
-  --tex-cloth-alt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55 .011' numOctaves='2' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .15 0 0 0 0 .157 0 0 0 0 .173 .44 0 0 0 -.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
+  --tex-cloth: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55 .011' numOctaves='2' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .79 0 0 0 0 .79 0 0 0 0 .78 .18 0 0 0 -.08'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
+  --tex-cloth-alt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55 .011' numOctaves='2' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .15 0 0 0 0 .157 0 0 0 0 .173 .26 0 0 0 -.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
 }
 
 
@@ -112,6 +115,13 @@ html[data-lang="en"] .zh,
 html[data-lang="zh"] .en { display: none !important; }
 
 p.zh { font-family: var(--f-zh); line-height: 1.95; letter-spacing: .02em; }
+
+/* Three voices: condensed caps for names and headings, the hangtag mono for
+   labels and metadata, and a serif for anything meant to be read. */
+.hero-lede p, .status dd, .look-title, .look-sum, .proj-sub, .proj-text > p,
+.what, .notes li, .print-fig figcaption {
+  font-family: var(--f-text);
+}
 
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .24em; }
@@ -205,7 +215,7 @@ b, strong { font-weight: 700; }
   font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
 }
 
-.footnote { margin: 44px 0 0; font-size: 12px; color: var(--ink-2); }
+.footnote { margin: 44px 0 0; font-size: 13px; color: var(--ink-2); }
 
 
 /* ---------- 5. Hero (Look 00) -------------------------------- */
@@ -253,7 +263,7 @@ b, strong { font-weight: 700; }
   grid-column: 1 / 8; grid-row: 1; z-index: 4; position: relative;
   display: flex; flex-wrap: wrap; gap: 4px 30px;
 }
-.hero-meta p { margin: 0; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; }
+.hero-meta p { margin: 0; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
 .hero-meta .dash { opacity: .6; }
 
 .hero-lede {
@@ -261,12 +271,12 @@ b, strong { font-weight: 700; }
   align-self: center; max-width: 34rem;
   padding: 28px 0;
 }
-.hero-lede p { margin: 0 0 26px; font-size: clamp(16px, 1.32vw, 19px); line-height: 1.55; }
-.hero-lede p.zh { line-height: 1.95; }
+.hero-lede p { margin: 0 0 28px; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.5; }
+.hero-lede p.zh { line-height: 1.85; }
 
-.status { margin: 0; display: grid; gap: 10px; font-size: 13px; line-height: 1.5; }
-.status div { display: grid; grid-template-columns: 6.5em minmax(0, 1fr); gap: 14px; }
-.status dt { padding-top: .1em; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; }
+.status { margin: 0; display: grid; gap: 10px; font-size: 15px; line-height: 1.5; }
+.status div { display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: 14px; }
+.status dt { padding-top: .32em; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; }
 .status dd { margin: 0; }
 
 /* portrait slot */
@@ -356,17 +366,17 @@ b, strong { font-weight: 700; }
 
 .look-top {
   display: flex; justify-content: space-between; gap: 12px;
-  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase;
 }
 .look-name {
   margin: 22px 0 2px;
   font: 800 clamp(42px, 4.8vw, 72px)/.86 var(--f-display); font-stretch: 62%;
   letter-spacing: -.004em;
 }
-.look-title { margin: 0; font-size: 13px; line-height: 1.45; font-weight: 700; }
-.look-authors { margin: 0; font-size: 12.5px; line-height: 1.5; }
-.look-sum { margin: 6px 0 0; font-size: 14.5px; line-height: 1.6; max-width: 38em; }
-p.look-sum.zh { font-size: 14.5px; }
+.look-title { margin: 0; font-size: 15.5px; line-height: 1.4; font-weight: 600; }
+.look-authors { margin: 0; font-size: 13.5px; line-height: 1.55; }
+.look-sum { margin: 8px 0 0; font-size: 17px; line-height: 1.6; max-width: 34em; }
+p.look-sum.zh { font-size: 16.5px; line-height: 1.85; }
 
 .look-foot {
   margin-top: auto; padding-top: 18px;
@@ -378,7 +388,7 @@ p.look-sum.zh { font-size: 14.5px; }
   display: inline-grid; gap: 3px;
   padding: 8px 16px;
   background: var(--ci); color: var(--c);
-  font-size: 10.5px; font-weight: 700; line-height: 1.35;
+  font-size: 11px; font-weight: 700; line-height: 1.35;
   letter-spacing: .12em; text-transform: uppercase;
 }
 .tag::before, .tag::after {
@@ -406,16 +416,17 @@ p.look-sum.zh { font-size: 14.5px; }
 .proj--flip { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
 .proj--flip .proj-text { order: 2; }
 
-.kicker { margin: 0 0 16px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.kicker { margin: 0 0 16px; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; }
 .proj-name {
   margin: 0;
   font: 800 clamp(58px, 7.6vw, 116px)/.8 var(--f-display); font-stretch: 62%;
   text-transform: uppercase; letter-spacing: -.008em;
 }
-.proj-sub { margin: 16px 0 20px; font-size: 13.5px; line-height: 1.45; font-weight: 700; }
-.proj-text > p.en, .proj-text > p.zh { margin: 0 0 18px; font-size: 15px; line-height: 1.62; }
+.proj-sub { margin: 16px 0 20px; font-size: 16.5px; line-height: 1.4; font-weight: 600; }
+.proj-text > p.en { margin: 0 0 18px; font-size: 17px; line-height: 1.62; }
+.proj-text > p.zh { margin: 0 0 18px; font-size: 16.5px; line-height: 1.85; }
 
-.spec { margin: 24px 0 0; font-size: 12.5px; line-height: 1.5; }
+.spec { margin: 24px 0 0; font-size: 13.5px; line-height: 1.55; }
 .spec div {
   display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 14px;
   padding: 10px 0; border-top: 1px solid var(--rule);
@@ -442,8 +453,8 @@ p.look-sum.zh { font-size: 14.5px; }
 .print--pinstripe { --print-bg: var(--cloth-black); color: var(--on-black); }
 .print--pinstripe::after { background: var(--tex-cloth-alt); }
 .print-fig figcaption {
-  margin-top: 12px; max-width: 54em;
-  font-size: 12px; line-height: 1.6; color: var(--ink-2);
+  margin-top: 12px; max-width: 48em;
+  font-size: 14.5px; line-height: 1.6; color: var(--ink-2);
 }
 
 
@@ -464,7 +475,7 @@ p.look-sum.zh { font-size: 14.5px; }
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
   background: var(--stitch-x); opacity: .4;
 }
-.when { grid-row: 1 / 3; padding-top: .5em; font-size: 12.5px; letter-spacing: .04em; white-space: nowrap; }
+.when { grid-row: 1 / 3; padding-top: .5em; font-size: 13px; letter-spacing: .04em; white-space: nowrap; }
 .ledger .now .when::before {
   content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 9px;
   background: currentColor; vertical-align: .08em;
@@ -474,7 +485,7 @@ p.look-sum.zh { font-size: 14.5px; }
   text-transform: uppercase;
 }
 .where .zh { font-family: var(--f-zh); font-weight: 600; font-size: .74em; letter-spacing: .06em; text-transform: none; }
-.what { font-size: 14px; line-height: 1.6; }
+.what { font-size: 16px; line-height: 1.6; }
 
 .notes-h {
   margin: 0 0 8px; font-size: 11.5px; font-weight: 700;
@@ -484,10 +495,10 @@ p.look-sum.zh { font-size: 14.5px; }
 .notes ul { list-style: none; margin: 0; padding: 0; }
 .notes li {
   display: flex; justify-content: space-between; gap: 18px;
-  padding: 10px 0; border-top: 1px solid var(--rule);
-  font-size: 13px; line-height: 1.5;
+  padding: 11px 0; border-top: 1px solid var(--rule);
+  font-size: 15px; line-height: 1.5;
 }
-.notes .y { flex: none; white-space: nowrap; color: var(--ink-2); }
+.notes .y { flex: none; white-space: nowrap; color: var(--ink-2); font-family: var(--f-mono); font-size: 13px; padding-top: .15em; }
 
 
 /* ---------- 9. Contact + footer ------------------------------ */
@@ -510,7 +521,7 @@ p.look-sum.zh { font-size: 14.5px; }
 .elsewhere {
   list-style: none; margin: 30px 0 0; padding: 0;
   display: flex; flex-wrap: wrap; gap: 10px 30px;
-  font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+  font-size: 14px; letter-spacing: .08em; text-transform: uppercase;
 }
 
 .foot {
@@ -575,7 +586,7 @@ p.look-sum.zh { font-size: 14.5px; }
   }
   .hero-name span { display: block; }
   .hero-lede { grid-column: 1; grid-row: 4; align-self: start; padding: 28px 0 0; }
-  .hero-lede p { font-size: 16px; margin-bottom: 22px; }
+  .hero-lede p { font-size: 18px; margin-bottom: 22px; }
   .status div { grid-template-columns: 5em minmax(0, 1fr); gap: 10px; }
 
   .sec { padding-top: 72px; }

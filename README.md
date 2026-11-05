@@ -35,7 +35,7 @@ python -m http.server 4173
 
 偶数位的卡片会自动错位、叠在左边那张上面，不需要手动调。
 
-**加一个项目**：复制一个 `<article class="proj">`。想让图文左右对调，就加 `proj--flip`。印花由数据属性生成，同样的 seed 每次画出来都一样：
+**加一项进行中的研究**（`#ongoing` 这一节）：复制一个 `<article class="proj">`。想让图文左右对调，就加 `proj--flip`。印花由数据属性生成，同样的 seed 每次画出来都一样：
 - `data-print="rain"`：雨痕拼布。`data-count` 是雨痕个数，`data-strips` 是布条数，`data-seed` 是随机种子。
 - `data-print="threads"`：抽线细条纹。`data-total` 是总线数，`data-pulled` 是被抽掉的线数，`data-labels="上标签|下标签"`。
 

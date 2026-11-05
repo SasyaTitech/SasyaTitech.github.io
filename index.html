@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mingda Liu</title>
 <meta name="description" content="Mingda Liu works on data-centric post-training: ultra-long-horizon environment construction and black-box distillation. MComp in AI, National University of Singapore.">
-<meta name="theme-color" content="#C9CAC6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#D3D4D0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#24262A" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://sasyatitech.github.io/">
 <meta property="og:type" content="website">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Archivo:wdth,wght@62..125,500..900&family=Noto+Serif+SC:wght@400;600&display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=20261105b">
+<link rel="stylesheet" href="assets/css/site.css?v=20261105c">
 <script>
   /* Pick the language before first paint: saved choice, else browser language. */
   (function () {
@@ -28,7 +28,7 @@
     document.documentElement.setAttribute("lang", l === "zh" ? "zh-CN" : "en");
   })();
 </script>
-<script src="assets/js/site.js?v=20261105b" defer></script>
+<script src="assets/js/site.js?v=20261105c" defer></script>
 </head>
 <body>
 <a class="skip" href="#main"><span class="en">Skip to content</span><span class="zh">跳到正文</span></a>
@@ -37,7 +37,7 @@
   <a class="brand" href="./">Mingda Liu</a>
   <nav class="nav" aria-label="Sections">
     <a href="#work"><span class="en">Work</span><span class="zh">论文</span></a>
-    <a href="#projects"><span class="en">Projects</span><span class="zh">项目</span></a>
+    <a href="#ongoing"><span class="en">Ongoing</span><span class="zh">在研</span></a>
     <a href="#path"><span class="en">Path</span><span class="zh">经历</span></a>
     <a href="#contact"><span class="en">Contact</span><span class="zh">联系</span></a>
   </nav>
@@ -142,8 +142,8 @@
           <h3 class="look-name">Norm Anchors</h3>
           <p class="look-title">Norm Anchors Make Model Edits Last</p>
           <p class="look-authors"><b>Mingda Liu*</b>, Zhenghan Zhu*, Ze'an Miao*, Katsuki Fujisawa</p>
-          <p class="look-sum en">A lightweight method that extends how many edits a model can sustain by more than 4× at negligible cost, making long-term model maintenance more reliable.</p>
-          <p class="look-sum zh">稳定了 LLM 知识的反复更新，开销可忽略，将可用编辑范围延长 4 倍以上，使模型维护更可靠，无需完整重训。</p>
+          <p class="look-sum en">LLMs break down after many sequential edits. Norm Anchors lets a model take more than 4× as many edits, at almost no extra cost.</p>
+          <p class="look-sum zh">模型被连续编辑多次后会逐渐失效。Norm Anchors 几乎不增加开销，就能把模型可承受的编辑次数提高到 4 倍以上。</p>
           <div class="look-foot">
             <span class="tag">
               <span><span class="en">LLM post-training / Lifelong learning</span><span class="zh">LLM 后训练 / 终身学习</span></span>
@@ -158,8 +158,8 @@
           <h3 class="look-name">cMoLLM</h3>
           <p class="look-title">cMoLLM at Scale: Horizontal Scaling Laws for Convolutionally-Gated Mixture-of-LLMs</p>
           <p class="look-authors">Xin Yang, Yemin Wang, <b>Mingda Liu</b>, Letian Li, Shuaishuai Cao, Zhengxiao He, Ryan Dong</p>
-          <p class="look-sum en">Scales model capacity through dynamically routed end-to-end model streams, improving quality under matched compute without a proportional increase in computation.</p>
-          <p class="look-sum zh">提出流水线级的混合架构，在同等算力下提升 LLM 质量，旨在获得比单纯扩大稠密模型更优的容量–算力权衡。</p>
+          <p class="look-sum en">A new MoE router based on convolutional gating that improves quality at the same compute, with scaling laws measured for the architecture.</p>
+          <p class="look-sum zh">一种新的 MoE 路由方式（卷积门控），在相同计算量下效果更好；论文测出了这种架构的 scaling law。</p>
           <div class="look-foot">
             <span class="tag"><span><span class="en">LLM architecture / Efficient scaling</span><span class="zh">LLM 架构 / 高效扩展</span></span></span>
             <a class="look-link" href="https://openreview.net/forum?id=sfjLeIbTAi" target="_blank" rel="noopener">OpenReview ↗</a>
@@ -171,8 +171,8 @@
           <h3 class="look-name">Fork of Thought</h3>
           <p class="look-title">Fork of Thought: Eliciting Self-Triggered Rethinking in LLM Agents via Branch-Sampled Reinforcement Learning</p>
           <p class="look-authors">Junjie Meng*, Wei Wu*, <b>Mingda Liu*</b>, Wen-Jie Shu, Xiaoru Liu, Jiqcheng Lu, Jun Liu, Hui Xiong</p>
-          <p class="look-sum en">Trains long-horizon agents to call for fresh-context verification when they need it and to recover from earlier mistakes in flight, without a separate, stronger critic.</p>
-          <p class="look-sum zh">训练长程智能体选择性地调用全新上下文验证，并在执行过程中从早期错误中恢复，无需依赖独立的更强评审模型，即可实现更可靠的多步自动化。</p>
+          <p class="look-sum en">Trains agents to decide when to stop and re-check earlier steps in a fresh context, and to go back and fix mistakes, without a separate checker model.</p>
+          <p class="look-sum zh">让智能体自己判断何时停下来，在新的上下文里核对前面的步骤，发现错误就回头修正，不需要额外的检查模型。</p>
           <div class="look-foot">
             <span class="tag"><span><span class="en">Agentic RL / Self-evolution</span><span class="zh">Agentic RL / 自进化</span></span></span>
           </div>
@@ -183,8 +183,8 @@
           <h3 class="look-name">BRIDGE</h3>
           <p class="look-title">BRIDGE: Bilevel Retrieval Credit-Aware Agentic Reinforcement Learning</p>
           <p class="look-authors">Quan Xiao*, <b>Mingda Liu*</b>, Gaowen Liu, Katsuki Fujisawa, Tianyi Chen</p>
-          <p class="look-sum en">Closes the information-credit gap between search agents and retrievers, improving knowledge-intensive reasoning and beating a joint-training baseline in roughly half the training time.</p>
-          <p class="look-sum zh">弥合了搜索智能体与检索器之间的信息–信用鸿沟，提升知识密集型推理能力，并以约一半的训练时间超越联合训练基线。</p>
+          <p class="look-sum en">Trains the LLM and the retriever together with RL so they adapt to each other and both learn from the reward; beats plain joint training in about half the time.</p>
+          <p class="look-sum zh">在强化学习中联合训练大模型和检索器，让两者互相适应，并充分利用 RL 信号；比普通联合训练效果更好，训练时间约减半。</p>
           <div class="look-foot">
             <span class="tag"><span><span class="en">Agentic RL / Retrieval</span><span class="zh">Agentic RL / 检索</span></span></span>
           </div>
@@ -196,15 +196,15 @@
 
 
     <!-- =====================================================
-         02 · Projects
-         Each project carries a "print" drawn from its own numbers:
+         02 · Ongoing research
+         Each piece of work carries a "print" drawn from its own numbers:
            data-print="rain"    data-count, data-strips, data-seed
            data-print="threads" data-total, data-pulled, data-seed
          ===================================================== -->
-    <section class="sec" id="projects" aria-labelledby="projects-h">
+    <section class="sec" id="ongoing" aria-labelledby="ongoing-h">
       <header class="sec-head">
         <span class="sec-no">02</span>
-        <h2 id="projects-h"><span class="en">Projects</span><span class="zh">项目</span></h2>
+        <h2 id="ongoing-h"><span class="en">Ongoing research</span><span class="zh">进行中的研究</span></h2>
         <p class="sec-note"><span class="en">Prints drawn from the data</span><span class="zh">印花由数据生成</span></p>
       </header>
 
